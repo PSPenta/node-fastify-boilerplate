@@ -1,0 +1,39 @@
+{
+  "name": "node-fastify-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --fix",
+    "lint-staged": "lint-staged",
+    "pretest": "npm run lint",
+    "start": "nodemon app",
+    "test": "mocha 'tests/**/*.js' --timeout 10000 --exit",
+    "update:packages": "npm install --save-dev npm-check-updates && ncu -u && npm update"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/compress": "^5.0.0",
+    "@fastify/cors": "^7.0.0",
+    "@fastify/helmet": "^8.0.0",
+    "@fastify/rate-limit": "^6.0.0",
+    "@fastify/swagger": "^6.0.1",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.29.0",
+    "fastify-status": "^2.2.1",
+    "http-status-codes": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.16"
+  }
+}
