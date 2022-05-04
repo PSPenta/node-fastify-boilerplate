@@ -73,6 +73,9 @@ fastify.register(require('@fastify/swagger'), {
   exposeRoute: true
 });
 
+/** Importing database connection when server starts */
+require('./src/config/dbConfig');
+
 /** Declare routes */
 fastify.register(require('./src/routes'), { prefix: '/api' });
 
