@@ -1,5 +1,6 @@
 /** Require the framework and instantiate it */
 const fastify = require('fastify')({ logger: true });
+const { StatusCodes } = require('http-status-codes');
 require('dotenv').config();
 
 const { swaggerDefinition } = require('./src/config/serverConfig');
@@ -81,7 +82,7 @@ fastify.register(require('./src/routes'), { prefix: '/api' });
 
 /** 404 Handler */
 // eslint-disable-next-line no-unused-vars
-fastify.setNotFoundHandler((request, reply) => reply.code(404).send(response('Route not found!')));
+fastify.setNotFoundHandler((request, reply) => reply.code(StatusCodes.NOT_FOUND).send(response('Route not found!')));
 
 /** Run the server */
 (async () => {
