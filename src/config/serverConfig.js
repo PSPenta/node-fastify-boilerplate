@@ -23,9 +23,9 @@ config.db = {
 
 config.swaggerDefinition = {
   info: {
-    title: 'Node Fastify Boilerplate',
+    title: process.env.APP_TITLE || 'Test Swagger Definition',
     description: '',
-    version: '1.0.0'
+    version: process.env.APP_VERSION || '0.0.0'
   },
   host: process.env.APP_URL || 'localhost:8080',
   schemes: ['http'],
