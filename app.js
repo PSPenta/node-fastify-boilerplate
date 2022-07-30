@@ -4,6 +4,7 @@ const { StatusCodes } = require('http-status-codes');
 require('dotenv').config();
 
 const { swaggerDefinition } = require('./src/config/serverConfig');
+const redisClient = require('./src/config/redisConfig');
 const { response } = require('./src/helpers/utils');
 
 /**
@@ -76,6 +77,9 @@ fastify.register(require('@fastify/swagger'), {
 
 /** Importing database connection when server starts */
 require('./src/config/dbConfig');
+
+/** Importing Redis connection when server starts */
+redisClient.connect();
 
 /** Declare routes */
 fastify.register(require('./src/routes'), { prefix: '/api' });
